@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>New Task</mat-card-title>
+    </mat-card-header>
+
+<mat-card-content>
+
+<form #thought (ngForm)="addMyThought(thought)">
+
+    <mat-form-field> 
+           <input type="text" placeholder="Please enter your thoughts"
+          name="thoughts" ngModel matInput>
+    </mat-form-field>
+    <br>
+    <mat-radio-group>
+        Priority: 
+        <mat-radio-button value="low">Low</mat-radio-button>
+        <mat-radio-button value="medium">Medium</mat-radio-button>
+        <mat-radio-button value="high">High</mat-radio-button>
+      </mat-radio-group>>
+      <br>
+Due:
+
+<mat-form-field>
+<input type="date" name="tod" placeholder="Today's date" ngModel matInput 
+[matDatepicker]="mydate">
+<mat-datepicker-toggle matSuffix [for]="mydate"></mat-datepicker-toggle>
+
+<mat-datepicker #mydate></mat-datepicker>
+    </mat-form-field>
+<br> 
+<button type="submit" mat-button mat-rasied-button color="accent">
+  <span>Add</span>
+</button>
+
+    </form>
+</mat-card-content>
+
+</mat-card>
